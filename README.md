@@ -1,11 +1,23 @@
-# Transcriptions
+# VTT Transcriptions
 
-This small package assists in the loading and parsing of VTT files.
+This small PHP package assists in the loading and parsing of VTT files.
+
 
 ## Usage
 
-TODO
+```php
+use Smudger\Transcriptions\Transcription;
+
+$transcription = Transcription::load('path/to/file.vtt');
+
+foreach ($transcription->lines() as $line) {
+    // $line->body
+    // $line->toAnchorTag()
+    
+    // $line->beginningTimestamp()
+}
+```
 
 ## License
 
-TODO
+This package is open-sourced software licensed under the [MIT](https://opensource.org/licenses/MIT) license.
