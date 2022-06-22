@@ -3,6 +3,7 @@
 namespace Tests;
 
 use ArrayAccess;
+use JsonSerializable;
 use PHPUnit\Framework\TestCase;
 use Smudger\Transcriptions\Line;
 use Smudger\Transcriptions\Transcription;
@@ -58,5 +59,14 @@ class TranscriptionTest extends TestCase
 
         $this->assertInstanceOf(ArrayAccess::class, $lines);
         $this->assertInstanceOf(Line::class, $lines[0]);
+    }
+
+    /** @test */
+    public function it_can_render_as_json()
+    {
+        $lines = $this->transcription->lines();
+
+        $this->assertInstanceOf(JsonSerializable::class, $lines);
+        $this->assertJson(json_encode($lines));
     }
 }
