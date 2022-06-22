@@ -12,6 +12,7 @@
             "email": "15144861+smudger@users.noreply.github.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php": ">=8.1"
     },
